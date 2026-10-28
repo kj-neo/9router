@@ -36,7 +36,7 @@ backup() {
 mkdir -p "$(dirname "$DB")"
 restore
 
-npm run start &
+node custom-server.js --port "${PORT:-10000}" &
 APP_PID=$!
 
 shutdown() { echo "[persist] encerrando..."; backup; kill "$APP_PID" 2>/dev/null; wait "$APP_PID"; exit 0; }
