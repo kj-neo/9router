@@ -1,7 +1,7 @@
 FROM node:20-slim
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends git curl jq ca-certificates python3 make g++ \
+ && apt-get install -y --no-install-recommends git curl jq sqlite3 ca-certificates python3 make g++ \
  && rm -rf /var/lib/apt/lists/*
 
 # Opcional: tag/commit para fixar a versão. Vazio = branch padrão do repositório.
